@@ -1,44 +1,25 @@
-import pandas as pd
+import xlrd
 
-def read_excel_file(file_name):
-    # Load the Excel file into a pandas DataFrame
-    df = pd.read_excel(file_name, header=None, skiprows=3)
+# Caricare il file XLS
+workbook = xlrd.open_workbook('nome_file.xls')
 
-    # Define the required information
-    year = df.iloc[2, 1]
-    cls = df.loc[1, 1]
-    period = df.loc[2, 2]
+# Selezionare il foglio di lavoro
+sheet = workbook.sheet_by_name('Nome_foglio')
 
-    # Define the number of rows to skip between students
-    rows_to_skip = 18
+# Ottenere le dimensioni della matrice
+nrows = sheet.nrows
+ncols = sheet.ncols
 
-    # Create an empty list to store student data
-    student_data = []
+# Creare una matrice vuota
+matrice = [[None for i in range(ncols)] for j in range(nrows)]
 
-    # Iterate through each student and append their data to the list
-    for i in range(0, df.shape[0], rows_to_skip):
-        student_name = df.loc[i, 3]
-        student_marks = df.iloc[i: i + rows_to_skip - 1, 4].tolist()
+# Leggere i dati dalla tabella e inserirli nella matrice
+for i in range(nrows):
+    for j in range(ncols):
+        matrice[i][j] = sheet.cell(i, j).value
 
-        # Calculate the average mark
-        student_average = sum(float(mark) for mark in student_marks if mark != 'X') / (len(student_marks) - 1)
-
-        student_data.append([student_name, *student_marks, student_average])
-
-    return year, cls, period, student_data
-
-def print_student_data(year, cls, period, student_data):
-    print(f'Year: {year}')
-    print(f'Class: {cls}')
-    print(f'Period: {period}')
-
-    print("\nStudent Data:")
-    for data in student_data:
-        print(data)
-
-# Get the filename from user input
-file_name = "1Sin.xls"
-
-# Read the Excel file and print the student data
-year, cls, period, student_data = read_excel_file(file_name)
-print_student_data(year, cls, period, student_data)
+# Stampare la matrice
+for i in range(nrows):
+    for j in range(ncols):
+        print(matrice[i][j], end=" ")
+    print()
