@@ -1,10 +1,11 @@
 import xlrd
+import json
 
 # Caricare il file XLS
-workbook = xlrd.open_workbook('nome_file.xls')
+workbook = xlrd.open_workbook('1Sin.xls')
 
 # Selezionare il foglio di lavoro
-sheet = workbook.sheet_by_name('Nome_foglio')
+sheet = workbook.sheet_by_name('TABELLONE VOTI')
 
 # Ottenere le dimensioni della matrice
 nrows = sheet.nrows
@@ -23,3 +24,7 @@ for i in range(nrows):
     for j in range(ncols):
         print(matrice[i][j], end=" ")
     print()
+
+# Save matrix data into a JSON file
+with open("matrix_data.json", "w") as json_file:
+    json.dump(matrice, json_file, indent=4)
