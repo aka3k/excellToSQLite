@@ -1,6 +1,6 @@
 import pandas as pd
 
-# Installare pandas e xlrd se necessario
+# Installare pandas e xlrd 
 
 # Carica il file Excel in un DataFrame
 path_excel = '1Sin.xls'
