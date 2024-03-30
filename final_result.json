@@ -142,7 +142,7 @@
     {
         "Pr.":8.0,
         "Alunno":"8 8",
-        "RELIGIONE":null,
+        "RELIGIONE":"O",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":7.0,
         "STORIA":7.0,
@@ -202,7 +202,7 @@
     {
         "Pr.":11.0,
         "Alunno":"11 11",
-        "RELIGIONE":null,
+        "RELIGIONE":"O",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":5.0,
         "STORIA":4.0,
@@ -242,7 +242,7 @@
     {
         "Pr.":13.0,
         "Alunno":"13 13",
-        "RELIGIONE":null,
+        "RELIGIONE":"O",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":6.0,
         "STORIA":7.0,
@@ -262,7 +262,7 @@
     {
         "Pr.":14.0,
         "Alunno":"14 14",
-        "RELIGIONE":null,
+        "RELIGIONE":"O",
         "LINGUA E LETT.IT":7.0,
         "LINGUA INGLESE":6.0,
         "STORIA":6.0,
@@ -382,7 +382,7 @@
     {
         "Pr.":20.0,
         "Alunno":"20 20",
-        "RELIGIONE":null,
+        "RELIGIONE":"O",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":6.0,
         "STORIA":3.0,
@@ -442,7 +442,7 @@
     {
         "Pr.":23.0,
         "Alunno":"23 23",
-        "RELIGIONE":null,
+        "RELIGIONE":"O",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":7.0,
         "STORIA":6.0,
