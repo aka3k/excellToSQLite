@@ -17,7 +17,8 @@
         "SCIENZE MOT. E SPORT":7.0,
         "COMPORTAMENTO":10.0,
         "Media":8.54,
-        "Esito":"Ammesso\/a"
+        "Esito":"Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":2.0,
@@ -37,7 +38,8 @@
         "SCIENZE MOT. E SPORT":8.0,
         "COMPORTAMENTO":8.0,
         "Media":7.38,
-        "Esito":"Ammesso\/a"
+        "Esito":"Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":3.0,
@@ -57,7 +59,8 @@
         "SCIENZE MOT. E SPORT":9.0,
         "COMPORTAMENTO":8.0,
         "Media":6.46,
-        "Esito":"Sospensione del giudizio"
+        "Esito":"Sospensione del giudizio",
+        "Classe":"1Sin"
     },
     {
         "Pr.":4.0,
@@ -77,7 +80,8 @@
         "SCIENZE MOT. E SPORT":8.0,
         "COMPORTAMENTO":8.0,
         "Media":7.08,
-        "Esito":"Ammesso\/a"
+        "Esito":"Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":5.0,
@@ -97,7 +101,8 @@
         "SCIENZE MOT. E SPORT":9.0,
         "COMPORTAMENTO":8.0,
         "Media":6.38,
-        "Esito":"Sospensione del giudizio"
+        "Esito":"Sospensione del giudizio",
+        "Classe":"1Sin"
     },
     {
         "Pr.":6.0,
@@ -117,7 +122,8 @@
         "SCIENZE MOT. E SPORT":7.0,
         "COMPORTAMENTO":8.0,
         "Media":6.62,
-        "Esito":"Ammesso\/a"
+        "Esito":"Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":7.0,
@@ -137,7 +143,8 @@
         "SCIENZE MOT. E SPORT":8.0,
         "COMPORTAMENTO":7.0,
         "Media":6.77,
-        "Esito":"Sospensione del giudizio"
+        "Esito":"Sospensione del giudizio",
+        "Classe":"1Sin"
     },
     {
         "Pr.":8.0,
@@ -157,7 +164,8 @@
         "SCIENZE MOT. E SPORT":8.0,
         "COMPORTAMENTO":7.0,
         "Media":7.0,
-        "Esito":"Ammesso\/a"
+        "Esito":"Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":9.0,
@@ -177,7 +185,8 @@
         "SCIENZE MOT. E SPORT":8.0,
         "COMPORTAMENTO":10.0,
         "Media":8.0,
-        "Esito":"Ammesso\/a"
+        "Esito":"Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":10.0,
@@ -197,7 +206,8 @@
         "SCIENZE MOT. E SPORT":7.0,
         "COMPORTAMENTO":8.0,
         "Media":6.31,
-        "Esito":"Sospensione del giudizio"
+        "Esito":"Sospensione del giudizio",
+        "Classe":"1Sin"
     },
     {
         "Pr.":11.0,
@@ -217,7 +227,8 @@
         "SCIENZE MOT. E SPORT":8.0,
         "COMPORTAMENTO":8.0,
         "Media":6.0,
-        "Esito":"Non Ammesso\/a"
+        "Esito":"Non Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":12.0,
@@ -237,7 +248,8 @@
         "SCIENZE MOT. E SPORT":7.0,
         "COMPORTAMENTO":9.0,
         "Media":6.92,
-        "Esito":"Ammesso\/a"
+        "Esito":"Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":13.0,
@@ -257,7 +269,8 @@
         "SCIENZE MOT. E SPORT":8.0,
         "COMPORTAMENTO":7.0,
         "Media":6.62,
-        "Esito":"Sospensione del giudizio"
+        "Esito":"Sospensione del giudizio",
+        "Classe":"1Sin"
     },
     {
         "Pr.":14.0,
@@ -277,7 +290,8 @@
         "SCIENZE MOT. E SPORT":6.0,
         "COMPORTAMENTO":8.0,
         "Media":6.77,
-        "Esito":"Ammesso\/a"
+        "Esito":"Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":15.0,
@@ -297,7 +311,8 @@
         "SCIENZE MOT. E SPORT":9.0,
         "COMPORTAMENTO":9.0,
         "Media":6.92,
-        "Esito":"Ammesso\/a"
+        "Esito":"Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":16.0,
@@ -317,7 +332,8 @@
         "SCIENZE MOT. E SPORT":7.0,
         "COMPORTAMENTO":9.0,
         "Media":7.38,
-        "Esito":"Ammesso\/a"
+        "Esito":"Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":17.0,
@@ -337,7 +353,8 @@
         "SCIENZE MOT. E SPORT":8.0,
         "COMPORTAMENTO":8.0,
         "Media":7.69,
-        "Esito":"Ammesso\/a"
+        "Esito":"Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":18.0,
@@ -357,7 +374,8 @@
         "SCIENZE MOT. E SPORT":7.0,
         "COMPORTAMENTO":9.0,
         "Media":6.69,
-        "Esito":"Sospensione del giudizio"
+        "Esito":"Sospensione del giudizio",
+        "Classe":"1Sin"
     },
     {
         "Pr.":19.0,
@@ -377,7 +395,8 @@
         "SCIENZE MOT. E SPORT":7.0,
         "COMPORTAMENTO":7.0,
         "Media":5.31,
-        "Esito":"Non Ammesso\/a"
+        "Esito":"Non Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":20.0,
@@ -397,7 +416,8 @@
         "SCIENZE MOT. E SPORT":7.0,
         "COMPORTAMENTO":7.0,
         "Media":6.23,
-        "Esito":"Sospensione del giudizio"
+        "Esito":"Sospensione del giudizio",
+        "Classe":"1Sin"
     },
     {
         "Pr.":21.0,
@@ -417,7 +437,8 @@
         "SCIENZE MOT. E SPORT":7.0,
         "COMPORTAMENTO":8.0,
         "Media":6.92,
-        "Esito":"Ammesso\/a"
+        "Esito":"Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":22.0,
@@ -437,7 +458,8 @@
         "SCIENZE MOT. E SPORT":7.0,
         "COMPORTAMENTO":9.0,
         "Media":7.0,
-        "Esito":"Ammesso\/a"
+        "Esito":"Ammesso\/a",
+        "Classe":"1Sin"
     },
     {
         "Pr.":23.0,
@@ -457,6 +479,70 @@
         "SCIENZE MOT. E SPORT":8.0,
         "COMPORTAMENTO":9.0,
         "Media":6.92,
-        "Esito":"Ammesso\/a"
+        "Esito":"Ammesso\/a",
+        "Classe":"1Sin"
+    },
+    {
+        "Pr.":null,
+        "Alunno":null,
+        "RELIGIONE":null,
+        "LINGUA E LETT.IT":null,
+        "LINGUA INGLESE":null,
+        "STORIA":null,
+        "EDUCAZIONE CIVICA":null,
+        "MATEMATICA":null,
+        "DIRITTO ED ECONOMIA":null,
+        "FISICA":null,
+        "CHIMICA":null,
+        "Tecn.informatiche":null,
+        "Tecn.e Tecn.di rappr":null,
+        "SC.DELLA TERRA\/GEO":null,
+        "SCIENZE MOT. E SPORT":null,
+        "COMPORTAMENTO":null,
+        "Media":null,
+        "Esito":null,
+        "Classe":"1Sin"
+    },
+    {
+        "Pr.":null,
+        "Alunno":null,
+        "RELIGIONE":null,
+        "LINGUA E LETT.IT":null,
+        "LINGUA INGLESE":null,
+        "STORIA":null,
+        "EDUCAZIONE CIVICA":null,
+        "MATEMATICA":null,
+        "DIRITTO ED ECONOMIA":null,
+        "FISICA":null,
+        "CHIMICA":null,
+        "Tecn.informatiche":null,
+        "Tecn.e Tecn.di rappr":null,
+        "SC.DELLA TERRA\/GEO":null,
+        "SCIENZE MOT. E SPORT":null,
+        "COMPORTAMENTO":null,
+        "Media":null,
+        "Esito":null,
+        "Classe":"1Sin"
+    },
+    {
+        "Pr.":null,
+        "Alunno":"Data",
+        "RELIGIONE":null,
+        "LINGUA E LETT.IT":null,
+        "LINGUA INGLESE":null,
+        "STORIA":null,
+        "EDUCAZIONE CIVICA":null,
+        "MATEMATICA":null,
+        "DIRITTO ED ECONOMIA":null,
+        "FISICA":null,
+        "CHIMICA":null,
+        "Tecn.informatiche":null,
+        "Tecn.e Tecn.di rappr":null,
+        "SC.DELLA TERRA\/GEO":null,
+        "SCIENZE MOT. E SPORT":null,
+        "COMPORTAMENTO":null,
+        "Media":null,
+        "Esito":null,
+        "Classe":"1Sin"
     }
 ]
