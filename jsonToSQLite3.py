@@ -1,24 +1,23 @@
 import sqlite3
 import json
 
-# Connect to SQLite3 database or create it if it doesn't exist
+# Connessione al database SQLite3 o creazione se non esiste
 conn = sqlite3.connect('studenti.db')
 c = conn.cursor()
 
-# Create studenti table
+# Creazione tabella studenti
 c.execute('''CREATE TABLE IF NOT EXISTS studenti
              (Pr REAL, Alunno TEXT, RELIGIONE TEXT, LINGUA_E_LETT_IT REAL,
               LINGUA_INGLESE REAL, STORIA REAL, EDUCAZIONE_CIVICA REAL,
               MATEMATICA REAL, DIRITTO_ED_ECONOMIA REAL, FISICA REAL,
               CHIMICA REAL, TECN_INFORMATICHE REAL, TECN_E_TECN_DI_RAPPR REAL,
-              SC_DELLA_TERRA_GEO REAL, SCIENZE_MOT_E_SPORT REAL, COMPORTAMENTO REAL,
-              Media REAL, Esito TEXT)''')
+              SCENZE_MOT_E_SPORT REAL, COMPORTAMENTO REAL, Media REAL, Esito TEXT)''')
 
-# Load data from JSON file
+# Caricamento dati dal file JSON
 with open('final_result.json') as f:
     data = json.load(f)
 
-# Insert data into studenti table
+# Inserimento dati nella tabella studenti
 for student in data:
     c.execute('''SELECT COUNT(*) FROM studenti WHERE Alunno=?''', (student['Alunno'],))
     if c.fetchone()[0] == 0:
@@ -32,7 +31,7 @@ for student in data:
                    student['SCIENZE MOT. E SPORT'], student['COMPORTAMENTO'],
                    student['Media'], student['Esito']))
 
-# Commit changes and close connection
+# Commit delle modifiche e chiusura della connessione
 conn.commit()
 conn.close()
 
