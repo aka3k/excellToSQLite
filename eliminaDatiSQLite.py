@@ -1,17 +1,19 @@
 import sqlite3
+# Establish connection to the database
+connection = sqlite3.connect("studenti.db")
+cursor = connection.cursor()
 
-# Collegati al database SQLite
-conn = sqlite3.connect('studenti.db')
+# Truncate the 'studenti' table
+cursor.execute("DELETE FROM studenti;")
 
-# Ottieni una lista di tutte le tabelle nel database
-cursor = conn.cursor()
-cursor.execute('SELECT name FROM sqlite_master WHERE type="table"')
-table_names = [name[0] for name in cursor.fetchall()]
+# Truncate the 'valutazione' table
+cursor.execute("DELETE FROM valutazione;")
 
-# Elimina tutte le tabelle
-for table_name in table_names:
-    cursor.execute(f'DROP TABLE IF EXISTS {table_name}')
+cursor.execute("DELETE FROM sqlite_sequence")
+# Commit changes to the database
+connection.commit()
 
-# Chiudi la connessione al database
-conn.close()
-print("dati eliminati correttamente")
+# Close the database connection
+connection.close()
+
+print("Tables 'studenti' and 'valutazione' successfully truncated!")
