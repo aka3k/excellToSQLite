@@ -60,27 +60,32 @@ for filename in os.listdir(data_folder):
             student_data = json.load(file)
 
         # Insert student data into 'studenti' table
-        for subject in student_data:
+        for materie in student_data:
             cursor.execute("""
             INSERT INTO studenti (pr, alunno, media, esito, classe)
             VALUES (?, ?, ?, ?, ?);
             """, (
-                subject["Pr."],
-                subject["Alunno"],
-                subject["Media"],
-                subject["Esito"],
-                subject["Classe"],
+                materie["Pr."],
+                materie["Alunno"],
+                materie["Media"],
+                materie["Esito"],
+                materie["Classe"],
             ))
-            for subject in student_data:
-                for materie in student_data:  # Iterare su tutte le materie in student_data
-                    for field_name, field_value in materie.items():
-                        if field_name != "Pr." and field_name != "Media" and field_name != "Esito" and field_name != "Classe" and field_name != "Alunno":
-                            # Inserisci voto nella tabella 'valutazione'
-                            student_id = cursor.lastrowid
-                            cursor2.execute("""
-                            INSERT INTO valutazione (idStudente, materia, voto)
-                            VALUES (?, ?, ?);
-                            """, (student_id, field_name, field_value))
+            for field_name, field_value in materie.items():
+                if field_name != "Pr." and field_name != "Media" and field_name != "Esito" and field_name != "Classe" and field_name != "Alunno":
+                    # Inserisci voto nella tabella 'valutazione'
+                    student_id = cursor.lastrowid
+                    cursor.execute("SELECT MAX(id) AS max_student_id FROM studenti;")
+
+                    # Fetch the result as a single row
+                    max_student_id_row = cursor.fetchone()
+
+                    # Extract the maximum student ID from the row
+                    max_student_id = max_student_id_row[0] if max_student_id_row else None
+                    cursor2.execute("""
+                    INSERT INTO valutazione (idStudente, materia, voto)
+                    VALUES (?, ?, ?);
+                    """, (max_student_id, field_name, field_value))
 
 # Commit changes and close connection
 connection.commit()
