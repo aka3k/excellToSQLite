@@ -1,41 +1,93 @@
 import sqlite3
 import json
+import os
 
-# Connessione al database SQLite3 o creazione se non esiste
-conn = sqlite3.connect('studenti.db')
-c = conn.cursor()
+def estrai_campo_per_posizione(data, posizione):
+    if isinstance(data, dict):
+        if posizione < len(data) :
+            
+            return list(data.items())[posizione]  # Estrai coppia nome-valore in base alla posizione
+        else:
+            raise IndexError("Indice fuori dal range per il dizionario")
+    elif isinstance(data, list):
+        if posizione < len(data):
+            return data[posizione]  # Estrai valore in base alla posizione nella lista
+        else:
+            return False
 
-# Creazione tabella studenti
-c.execute('''CREATE TABLE IF NOT EXISTS studenti
-             (Pr REAL, Alunno TEXT, RELIGIONE TEXT, LINGUA_E_LETT_IT REAL,
-              LINGUA_INGLESE REAL, STORIA REAL, EDUCAZIONE_CIVICA REAL,
-              MATEMATICA REAL, DIRITTO_ED_ECONOMIA REAL, FISICA REAL,
-              CHIMICA REAL, TECN_INFORMATICHE REAL, TECN_E_TECN_DI_RAPPR REAL,
-              SCENZE_MOT_E_SPORT REAL, COMPORTAMENTO REAL, Media REAL, Esito TEXT)''')
+    else:
+        raise TypeError("Tipo di dato non supportato")
+# Database name
+db_name = "studenti.db"
 
-# Caricamento dati dal file JSON
-with open('final_result.json') as f:
-    data = json.load(f)
+# Create connection and cursor
+connection = sqlite3.connect(db_name)
+cursor = connection.cursor()
+cursor2 = connection.cursor()
 
-# Inserimento dati nella tabella studenti
-for student in data:
-    c.execute('''SELECT COUNT(*) FROM studenti WHERE Alunno=?''', (student['Alunno'],))
-    if c.fetchone()[0] == 0:
-        c.execute('''INSERT INTO studenti VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
-                  (student['Pr.'], student['Alunno'], student['RELIGIONE'],
-                   student['LINGUA E LETT.IT'], student['LINGUA INGLESE'],
-                   student['STORIA'], student['EDUCAZIONE CIVICA'],
-                   student['MATEMATICA'], student['DIRITTO ED ECONOMIA'],
-                   student['FISICA'], student['CHIMICA'], student['Tecn.informatiche'],
-                   student['Tecn.e Tecn.di rappr'], student['SC.DELLA TERRA/GEO'],
-                   student['SCIENZE MOT. E SPORT'], student['COMPORTAMENTO'],
-                   student['Media'], student['Esito']))
+# Create 'studenti' table (if it doesn't exist)
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS studenti (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    pr REAL,
+    alunno TEXT,
+    media REAL,
+    esito TEXT,
+    classe TEXT
+);
+""")
 
-# Commit delle modifiche e chiusura della connessione
-conn.commit()
-conn.close()
+# Create 'valutazione' table (if it doesn't exist)
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS valutazione (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    idStudente INTEGER,
+    materia TEXT,
+    voto REAL,
+    FOREIGN KEY (idStudente) REFERENCES studenti(id)
+);
+""")
 
-if c.rowcount > 0:
-    print("Dati aggiunti con successo.")
-else:
-    print("Nessun dato aggiunto, tutti i dati erano già presenti nel database.")
+# Data folder
+data_folder = "file_json"
+
+# Populate tables from JSON files
+for filename in os.listdir(data_folder):
+    if filename.endswith(".json"):
+        file_path = os.path.join(data_folder, filename)
+
+        with open(file_path, "r") as file:
+            student_data = json.load(file)
+
+        # Insert student data into 'studenti' table
+        for subject in student_data:
+            cursor.execute("""
+            INSERT INTO studenti (pr, alunno, media, esito, classe)
+            VALUES (?, ?, ?, ?, ?);
+            """, (
+                subject["Pr."],
+                subject["Alunno"],
+                subject["Media"],
+                subject["Esito"],
+                subject["Classe"],
+            ))
+            for subject in student_data:
+                for materie in student_data:  # Iterare su tutte le materie in student_data
+                    for field_name, field_value in materie.items():
+                        if field_name != "Pr." and field_name != "Media" and field_name != "Esito" and field_name != "Classe" and field_name != "Alunno":
+                            # Inserisci voto nella tabella 'valutazione'
+                            student_id = cursor.lastrowid
+                            cursor2.execute("""
+                            INSERT INTO valutazione (idStudente, materia, voto)
+                            VALUES (?, ?, ?);
+                            """, (student_id, field_name, field_value))
+
+# Commit changes and close connection
+connection.commit()
+connection.close()
+
+print("Database populated with data from JSON files!")
+
+
+
+            
