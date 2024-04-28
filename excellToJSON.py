@@ -46,14 +46,14 @@ for nome_file_excel in nomi_file_excel:
     # Leggi il file Excel in un DataFrame di Pandas
     df = pd.read_excel(percorso_excel, engine='xlrd', usecols=nomi_celle_filtrati, skiprows=3)
 
-    # Aggiungi la classe come un nuovo campo nel DataFrame
-    df['Classe'] = nome_file_senza_estensione
-
     # Trova l'indice della prima riga con tutti i valori nulli
     for i, row in df.iterrows():
         if all(pd.isnull(row)):
             break
 
+    # Aggiungi la classe come un nuovo campo nel DataFrame
+    df['Classe'] = nome_file_senza_estensione
+    
     # Crea un nuovo DataFrame con solo le righe fino all'indice trovato
     df_filtrato = df.iloc[:i]
 
