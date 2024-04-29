@@ -2,6 +2,7 @@
     {
         "Pr.":1.0,
         "Alunno":"1 1",
+        "bonci":null,
         "RELIGIONE":"O",
         "LINGUA E LETT.IT":8.0,
         "LINGUA INGLESE":7.0,
@@ -23,6 +24,7 @@
     {
         "Pr.":2.0,
         "Alunno":"2 2",
+        "bonci":null,
         "RELIGIONE":"DI",
         "LINGUA E LETT.IT":7.0,
         "LINGUA INGLESE":7.0,
@@ -44,6 +46,7 @@
     {
         "Pr.":3.0,
         "Alunno":"3 3",
+        "bonci":null,
         "RELIGIONE":"DI",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":6.0,
@@ -65,6 +68,7 @@
     {
         "Pr.":4.0,
         "Alunno":"4 4",
+        "bonci":null,
         "RELIGIONE":"O",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":7.0,
@@ -86,6 +90,7 @@
     {
         "Pr.":5.0,
         "Alunno":"5 5",
+        "bonci":null,
         "RELIGIONE":"BUO",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":6.0,
@@ -107,6 +112,7 @@
     {
         "Pr.":6.0,
         "Alunno":"6 6",
+        "bonci":null,
         "RELIGIONE":"DI",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":6.0,
@@ -128,6 +134,7 @@
     {
         "Pr.":7.0,
         "Alunno":"7 7",
+        "bonci":null,
         "RELIGIONE":"O",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":6.0,
@@ -149,6 +156,7 @@
     {
         "Pr.":8.0,
         "Alunno":"8 8",
+        "bonci":null,
         "RELIGIONE":null,
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":7.0,
@@ -170,6 +178,7 @@
     {
         "Pr.":9.0,
         "Alunno":"9 9",
+        "bonci":null,
         "RELIGIONE":"O",
         "LINGUA E LETT.IT":8.0,
         "LINGUA INGLESE":6.0,
@@ -191,6 +200,7 @@
     {
         "Pr.":10.0,
         "Alunno":"10 10",
+        "bonci":null,
         "RELIGIONE":"O",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":6.0,
@@ -212,6 +222,7 @@
     {
         "Pr.":11.0,
         "Alunno":"11 11",
+        "bonci":null,
         "RELIGIONE":null,
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":5.0,
@@ -233,6 +244,7 @@
     {
         "Pr.":12.0,
         "Alunno":"12 12",
+        "bonci":null,
         "RELIGIONE":"DI",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":7.0,
@@ -254,6 +266,7 @@
     {
         "Pr.":13.0,
         "Alunno":"13 13",
+        "bonci":null,
         "RELIGIONE":null,
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":6.0,
@@ -275,6 +288,7 @@
     {
         "Pr.":14.0,
         "Alunno":"14 14",
+        "bonci":null,
         "RELIGIONE":null,
         "LINGUA E LETT.IT":7.0,
         "LINGUA INGLESE":6.0,
@@ -296,6 +310,7 @@
     {
         "Pr.":15.0,
         "Alunno":"15 15",
+        "bonci":null,
         "RELIGIONE":"DI",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":6.0,
@@ -317,6 +332,7 @@
     {
         "Pr.":16.0,
         "Alunno":"16 16",
+        "bonci":null,
         "RELIGIONE":"O",
         "LINGUA E LETT.IT":7.0,
         "LINGUA INGLESE":7.0,
@@ -338,6 +354,7 @@
     {
         "Pr.":17.0,
         "Alunno":"17 17",
+        "bonci":null,
         "RELIGIONE":"DI",
         "LINGUA E LETT.IT":7.0,
         "LINGUA INGLESE":6.0,
@@ -359,6 +376,7 @@
     {
         "Pr.":18.0,
         "Alunno":"18 18",
+        "bonci":null,
         "RELIGIONE":"O",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":6.0,
@@ -380,6 +398,7 @@
     {
         "Pr.":19.0,
         "Alunno":"19 19",
+        "bonci":null,
         "RELIGIONE":"DI",
         "LINGUA E LETT.IT":4.0,
         "LINGUA INGLESE":6.0,
@@ -401,6 +420,7 @@
     {
         "Pr.":20.0,
         "Alunno":"20 20",
+        "bonci":null,
         "RELIGIONE":null,
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":6.0,
@@ -422,6 +442,7 @@
     {
         "Pr.":21.0,
         "Alunno":"21 21",
+        "bonci":null,
         "RELIGIONE":"O",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":7.0,
@@ -443,6 +464,7 @@
     {
         "Pr.":22.0,
         "Alunno":"22 22",
+        "bonci":null,
         "RELIGIONE":"O",
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":7.0,
@@ -464,6 +486,7 @@
     {
         "Pr.":23.0,
         "Alunno":"23 23",
+        "bonci":null,
         "RELIGIONE":null,
         "LINGUA E LETT.IT":6.0,
         "LINGUA INGLESE":7.0,
