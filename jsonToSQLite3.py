@@ -2,10 +2,10 @@ import sqlite3
 import json
 import os
 
+# Funzione per estrarre un campo da una posizione in un dizionario o lista
 def estrai_campo_per_posizione(data, posizione):
     if isinstance(data, dict):
         if posizione < len(data) :
-            
             return list(data.items())[posizione]  # Estrai coppia nome-valore in base alla posizione
         else:
             raise IndexError("Indice fuori dal range per il dizionario")
@@ -17,15 +17,16 @@ def estrai_campo_per_posizione(data, posizione):
 
     else:
         raise TypeError("Tipo di dato non supportato")
-# Database name
+
+# Nome del database
 db_name = "studenti.db"
 
-# Create connection and cursor
+# Creazione connessione e cursore
 connection = sqlite3.connect(db_name)
 cursor = connection.cursor()
 cursor2 = connection.cursor()
 
-# Create 'studenti' table (if it doesn't exist)
+# Creazione tabella studenti (se non esiste)
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS studenti (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -37,7 +38,7 @@ CREATE TABLE IF NOT EXISTS studenti (
 );
 """)
 
-# Create 'valutazione' table (if it doesn't exist)
+# Creazione tabella valutazione (se non esiste)
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS valutazione (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -48,10 +49,11 @@ CREATE TABLE IF NOT EXISTS valutazione (
 );
 """)
 
-# Data folder
+# Cartella dei file JSON
 data_folder = "file_json"
 
-# Populate tables from JSON files
+duplicated_data=False
+# Popolamento tabelle da file JSON
 for filename in os.listdir(data_folder):
     if filename.endswith(".json"):
         file_path = os.path.join(data_folder, filename)
@@ -59,9 +61,8 @@ for filename in os.listdir(data_folder):
         with open(file_path, "r") as file:
             student_data = json.load(file)
 
-        # Insert student data into 'studenti' table
+        # Inserimento dati studente nella tabella studenti
         for materie in student_data:
-            
             cursor.execute("""
             SELECT pr, alunno, media, esito, classe
             FROM studenti
@@ -74,15 +75,16 @@ for filename in os.listdir(data_folder):
                 materie["Classe"],
             ))
 
-
-            # Fetch the result as a single row
+            # Fetch del risultato come singola riga
             duplicate = cursor.fetchone()
             if(duplicate):
-                print("dato duplicato")
+                if(duplicated_data==False):
+                    print("Sono stati trovati dei dati duplicati che non verranno inseriti")
+                    duplicated_data=True
             else:
                 cursor.execute("""
                 INSERT INTO studenti (pr, alunno, media, esito, classe)
-                VALUES (?, ?, ?, ?, ?);
+                VALUES (?,?,?,?,?);
                 """, (
                     materie["Pr."],
                     materie["Alunno"],
@@ -91,26 +93,22 @@ for filename in os.listdir(data_folder):
                     materie["Classe"],
                 ))
                 for field_name, field_value in materie.items():
-                    if field_name != "Pr." and field_name != "Media" and field_name != "Esito" and field_name != "Classe" and field_name != "Alunno":
+                    if field_name!= "Pr." and field_name!= "Media" and field_name!= "Esito" and field_name!= "Classe" and field_name!= "Alunno":
                         cursor.execute("SELECT MAX(id) AS max_student_id FROM studenti;")
 
-                        # Fetch the result as a single row
+                        # Fetch del risultato come singola riga
                         max_student_id_row = cursor.fetchone()
 
-                        # Extract the maximum student ID from the row
+                        # Estrazione dell'ID studente massimo dalla riga
                         max_student_id = max_student_id_row[0] if max_student_id_row else None
 
                         cursor2.execute("""
                         INSERT INTO valutazione (idStudente, materia, voto)
-                        VALUES (?, ?, ?);
+                        VALUES (?,?,?);
                         """, (max_student_id, field_name, field_value))
 
-# Commit changes and close connection
+# Commit delle modifiche e chiusura della connessione
 connection.commit()
 connection.close()
 
-print("Database populated with data from JSON files!")
-
-
-
-            
+print("Il database è stato riempito con i dati!")

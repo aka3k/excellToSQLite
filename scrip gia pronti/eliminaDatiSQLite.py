@@ -1,19 +1,23 @@
 import sqlite3
-# Establish connection to the database
-connection = sqlite3.connect("studenti.db")
-cursor = connection.cursor()
 
-# Truncate the 'studenti' table
+# Connessione al database
+connessione = sqlite3.connect("studenti.db")
+cursor = connessione.cursor()
+
+# Pulizia della tabella 'studenti'
 cursor.execute("DELETE FROM studenti;")
 
-# Truncate the 'valutazione' table
+# Pulizia della tabella 'valutazione'
 cursor.execute("DELETE FROM valutazione;")
 
+# Reset sequenza
 cursor.execute("DELETE FROM sqlite_sequence")
-# Commit changes to the database
-connection.commit()
 
-# Close the database connection
-connection.close()
+# Salvataggio delle modifiche al database
+connessione.commit()
 
-print("Tables 'studenti' and 'valutazione' successfully truncated!")
+# Chiusura della connessione al database
+connessione.close()
+
+# Messaggio di conferma
+print("i dati in studenti e valutazioni sono stati eliminati!")
