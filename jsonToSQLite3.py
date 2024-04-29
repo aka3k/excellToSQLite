@@ -61,24 +61,25 @@ for filename in os.listdir(data_folder):
 
         # Insert student data into 'studenti' table
         for materie in student_data:
-            query="""
+            
+            cursor.execute("""
             SELECT pr, alunno, media, esito, classe
             FROM studenti
-            WHERE pr = ? AND alunno = ? AND media = ? AND esito = ? AND classe = ?;
-            """, {
+            WHERE pr =? AND alunno =? AND media =? AND esito =? AND classe =?
+            """, (
                 str(materie["Pr."]),
                 materie["Alunno"],
                 str(materie["Media"]),
                 materie["Esito"],
                 materie["Classe"],
-            }
-            duplicate=0
-            cursor.execute(str(query))
+            ))
 
 
             # Fetch the result as a single row
             duplicate = cursor.fetchone()
-            if(duplicate==0):
+            if(duplicate):
+                print("dato duplicato")
+            else:
                 cursor.execute("""
                 INSERT INTO studenti (pr, alunno, media, esito, classe)
                 VALUES (?, ?, ?, ?, ?);
